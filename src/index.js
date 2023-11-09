@@ -22,7 +22,7 @@ const main = async () => {
       descriptor: `${data.current.condition.text}`,
       highTemp: `${data.forecast.forecastday[0].day.maxtemp_f.toString().split('.')[0]}\u00B0F`,
       lowTemp: `${data.forecast.forecastday[0].day.mintemp_f.toString().split('.')[0]}\u00B0F`,
-      feelsLike: `${data.current.feelslike_f.toString().split('.')[0]}\u2109`,
+      feelsLike: `${data.current.feelslike_f.toString().split('.')[0]}`,
       rainChance: `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`,
       humidity: `${data.current.humidity}%`,
       currWind: `${data.current.wind_mph}mph`,

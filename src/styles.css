@@ -11,6 +11,19 @@
   font-weight: bold;
 }
 
+/* UTILS */
+
+.degrees {
+  position: relative;
+}
+
+.degrees::after{
+  content: '\00B0 F';
+  position: absolute;
+  font-size: 0.25em;
+  top: 0.6em;
+  right: -0.5em;
+}
 
 
 html, body {
@@ -38,7 +51,7 @@ html, body {
 }
 
 .title {
-  font-size: calc(var(--font-size)*2);
+  font-size: 2rem;
 }
 
 .header form input {
@@ -46,6 +59,7 @@ html, body {
   cursor: text;
   border-bottom: solid rgba(255, 255, 255, 0.582);
   padding: 0px 5px;
+  width: 25vw;
 }
 
 .header form button {
@@ -71,12 +85,12 @@ html, body {
 
 .description {
   grid-area: desc;
-  font-size: calc(var(--font-size)*1.5);
+  font-size: 1.5rem;
 }
 
 .location {
   grid-area: location;
-  font-size: calc(var(--font-size)*3);
+  font-size: 3rem;
 }
 
 .date {
@@ -85,7 +99,7 @@ html, body {
 
 .current-temp {
   grid-area: temp;
-  font-size: calc(var(--font-size)*6);
+  font-size: 7rem;
 }
 
 .weather-details {
@@ -116,7 +130,7 @@ html, body {
 .left-side-details .high-temp,
 .left-side-details .low-temp {
   font-family: 'Nunito', sans-serif;
-  font-size: calc(var(--font-size)*4);
+  font-size: 4rem;
   font-weight: 900;
 }
 
@@ -130,7 +144,7 @@ html, body {
 }
 
 .sad-face {
-  font-size: calc(var(--font-size)*5);
+  font-size: 5rem;
 }
 
 .solution-container {
@@ -139,12 +153,12 @@ html, body {
 }
 
 .error-message {
-  font-size: calc(var(--font-size)*3);
+  font-size: 3rem;
 }
 
 .solution-message {
   text-align: left;
-  font-size: calc(var(--font-size)*1.5);
+  font-size: 1.5rem;
 }
 
 .footer {

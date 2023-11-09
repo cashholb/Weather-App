@@ -30,8 +30,8 @@ const displayToday = (currentObj) => {
   content.appendChild(weatherDetailsDom);
 
   // current temp
-  const tempDom = document.createElement('div');
-  tempDom.classList.add('current-temp');
+  const tempDom = document.createElement('span');
+  tempDom.classList.add('current-temp', 'degrees');
   tempDom.textContent = currentObj.feelsLike;
   weatherDetailsDom.appendChild(tempDom);
 
@@ -61,7 +61,7 @@ const displayToday = (currentObj) => {
 
   // current wind speed
   const currWind = document.createElement('div');
-  currWind.textContent = `Current wind speed: ${currentObj.currWind}`;
+  currWind.textContent = `Wind speed: ${currentObj.currWind}`;
   rightSideDom.appendChild(currWind);
 };
 
