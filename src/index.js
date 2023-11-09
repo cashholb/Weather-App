@@ -3,7 +3,7 @@ import format from 'date-fns/format';
 import './styles.css';
 import { constructDateToday, constructDayForcasted } from './utils';
 import getWeather from "./api";
-import { displayToday, displayForecast } from "./dom";
+import { displayToday, displayForecast, displayCouldNotFind } from "./dom";
 
 const NUMBER_OF_DAYS_TO_FORECAST = 3;
 const forecastDays = ["a", "b", "c"];
@@ -11,29 +11,11 @@ const forecastDays = ["a", "b", "c"];
 let displayedDay = 0;
 let location = 'New York, New York';
 
-// fetch data from api and console log it
-const displayWeather = (currentObj, forecastObj) => {
-  console.log(currentObj);
-  console.log(forecastObj);
-  console.log(document.querySelector('.content').childNodes);
-
-  const currentWeather = document.querySelector('.current');
-  currentWeather.textContent = `Current temp as of (${currentObj.last_updated}) is ${currentObj.temp_f}\u00B0F`;
-
-  const dayOne = document.getElementById('day-one');
-  dayOne.textContent = `The avg temp of ${forecastObj.dayOne.date} will be ${forecastObj.dayOne.day.avgtemp_f}\u00B0F`;
-
-  const dayTwo = document.getElementById('day-two');
-  dayTwo.textContent = `The avg temp of ${forecastObj.dayTwo.date} will be ${forecastObj.dayTwo.day.avgtemp_f}\u00B0F`;
-};
-
 const main = async () => {
   try {
     const data = await getWeather(location);
-    console.log(data);
 
     // get current weather
-    console.log(typeof data.current.feelslike_f);
     forecastDays[0] = {
       date: constructDateToday(data.current.last_updated),
       location: `${data.location.name}, ${data.location.region}`,
@@ -61,7 +43,6 @@ const main = async () => {
         humidity: `${forecastData.day.avghumidity}%`,
         maxWind: `${forecastData.day.maxwind_mph}mph`,
       };
-      console.log(forecastDays[i]);
     }
 
     if (displayedDay === 0) {
@@ -70,8 +51,7 @@ const main = async () => {
       displayForecast(forecastDays[displayedDay], displayedDay === NUMBER_OF_DAYS_TO_FORECAST - 1);
     }
   } catch (e) {
-    //TO-DO: displayCouldNotFind();
-    console.log('CAUGHT', e);
+    displayCouldNotFind(location);
   }
 };
 

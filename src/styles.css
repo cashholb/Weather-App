@@ -17,9 +17,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   background-image: url(./assets/images/pexels-philippe-donn-1169754.jpg);
-  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -70,10 +68,6 @@ html, body {
   cursor: pointer;
 }
 
-.current {
-  
-}
-
 .description {
   grid-area: desc;
   font-size: calc(var(--font-size)*1.5);
@@ -120,6 +114,34 @@ html, body {
 .left-side-details .high-temp,
 .left-side-details .low-temp {
   font-size: calc(var(--font-size)*4);
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-block-start: 1em;
+  text-align: left;
+}
+
+.sad-face {
+  font-size: calc(var(--font-size)*5);
+}
+
+.solution-container {
+  text-align: start;
+  margin: 0;
+}
+
+.error-message {
+  font-size: calc(var(--font-size)*3);
+}
+
+.solution-message {
+  text-align: left;
+  font-size: calc(var(--font-size)*1.5);
+
 }
 
 

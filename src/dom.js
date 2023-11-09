@@ -1,7 +1,7 @@
 const displayToday = (currentObj) => {
   // hide left side
   (document.querySelector('.left.arrow')).style.visibility = 'hidden';
-  
+
   (document.querySelector('.right.arrow')).style.visibility = 'visible';
 
   const content = document.querySelector('.current');
@@ -135,4 +135,45 @@ const displayForecast = (forecastObj, isLastDay) => {
   rightSideDom.appendChild(maxWind);
 };
 
-export { displayToday, displayForecast };
+const displayCouldNotFind = (location) => {
+  // disable arrow buttons
+  (document.querySelector('.left.arrow')).style.visibility = 'hidden';
+  (document.querySelector('.right.arrow')).style.visibility = 'hidden';
+
+  // display error message
+  const content = document.querySelector('.current');
+  content.innerHTML = "";
+
+  const errorContainer = document.createElement('div');
+  errorContainer.classList.add('error-container');
+  content.appendChild(errorContainer);
+
+  const sadFace = document.createElement('div');
+  sadFace.classList.add('sad-face');
+  sadFace.textContent = ':(';
+  errorContainer.appendChild(sadFace);
+
+  const errorMessage = document.createElement('div');
+  errorMessage.classList.add('error-message');
+  errorMessage.textContent = `Could not find location '${location}'`;
+  errorContainer.appendChild(errorMessage);
+
+  const solutionContainer = document.createElement('ul');
+  solutionContainer.classList.add('solution-container');
+  errorContainer.appendChild(solutionContainer);
+
+  const solutionMessage = document.createElement('p');
+  solutionMessage.classList.add('solution-message');
+  solutionMessage.textContent = 'Locations can be inputed with the following formats ...';
+  solutionContainer.appendChild(solutionMessage);
+
+  const possibleSolutions = ["Latitude and Longitude (Decimal degree) e.g: 48.8567,2.3508", "city name e.g.: Paris", "US zip e.g.: 10001", "UK postcode e.g: SW1", "Canada postal code e.g: G2J", "IP address (IPv4 and IPv6 supported) e.g: 100.0.0.1"];
+  possibleSolutions.forEach((solution) => {
+    const listElem = document.createElement('li');
+    listElem.classList.add('solution');
+    listElem.innerHTML = solution;
+    solutionContainer.appendChild(listElem);
+  });
+};
+
+export { displayToday, displayForecast, displayCouldNotFind };
