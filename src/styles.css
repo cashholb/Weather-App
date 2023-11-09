@@ -1,8 +1,16 @@
+:root {
+  --font-size: 20px;
+}
+
 * {
   color: white;
   box-sizing: border-box;
   font-family: 'Noto Sans', sans-serif;
+  font-size: var(--font-size);
+  font-weight: bold;
 }
+
+
 
 html, body {
   margin: 0;
@@ -30,16 +38,25 @@ html, body {
   align-items: center;
 }
 
+.title {
+  font-size: calc(var(--font-size)*2);
+}
+
 .header form input {
   all: unset;
   cursor: text;
   border-bottom: solid rgba(255, 255, 255, 0.582);
-  padding: 0 5px;
+  padding: 0px 5px;
 }
 
 .header form button {
   all: unset;
   cursor: pointer;
+}
+
+.header button img{
+  width: 40px;
+  height: 40px;
 }
 
 .content {
@@ -53,11 +70,61 @@ html, body {
   cursor: pointer;
 }
 
-.arrow img {
+.current {
   
 }
 
+.description {
+  grid-area: desc;
+  font-size: calc(var(--font-size)*1.5);
+}
+
+.location {
+  grid-area: location;
+  font-size: calc(var(--font-size)*3);
+}
+
+.date {
+  grid-area: date;
+}
+
+.current-temp {
+  grid-area: temp;
+  font-size: calc(var(--font-size)*6);
+}
+
+.weather-details {
+  margin-top: 15px;
+  display: flex;
+  gap: 30px;
+}
+
+.weather-details:before {
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.582);
+  align-self: stretch;
+}
+
+.current-temp,
+.left-side-details {
+  order: -1;
+}
+
+.right-side-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.left-side-details .high-temp,
+.left-side-details .low-temp {
+  font-size: calc(var(--font-size)*4);
+}
+
+
 .footer {
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -9,6 +9,7 @@
         "sourceType": "module"
     },
     "rules": {
-        "quotes": ["off"]
+        "quotes": ["off"],
+        "max-len": ["off"]
     }
 }
