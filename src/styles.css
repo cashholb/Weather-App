@@ -1,11 +1,12 @@
 :root {
   --font-size: 20px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@300;400;500;600;700;800;900;1000&display=swap');
 
 * {
   color: white;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', 'Times New Roman', Times, serif;
   font-size: var(--font-size);
   font-weight: bold;
 }
@@ -101,6 +102,7 @@ html, body {
 
 .current-temp,
 .left-side-details {
+  font-family: 'Nunito', sans-serif;
   order: -1;
 }
 
@@ -113,7 +115,9 @@ html, body {
 
 .left-side-details .high-temp,
 .left-side-details .low-temp {
+  font-family: 'Nunito', sans-serif;
   font-size: calc(var(--font-size)*4);
+  font-weight: 900;
 }
 
 .error-container {
@@ -141,9 +145,7 @@ html, body {
 .solution-message {
   text-align: left;
   font-size: calc(var(--font-size)*1.5);
-
 }
-
 
 .footer {
   text-align: center;
@@ -158,3 +160,4 @@ html, body {
   height: 35px;
   width: 35px;
 }
+
