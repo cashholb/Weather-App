@@ -11,7 +11,7 @@ const forecastDays = ["", "", ""];
 
 // globals
 let displayedDay = 0;
-let location = loadLastLocation() || 'New York, New York';
+let location = loadLastLocation() || 'Cashton';
 
 const main = async () => {
   try {
