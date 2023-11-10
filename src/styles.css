@@ -193,13 +193,11 @@ html, body {
   .weather-details {
     gap: 100px;
   }
-  
-
 }
 
 @media (max-width: 1000px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
     align-items: center;
   }
   .header button img{
@@ -211,6 +209,9 @@ html, body {
   }
   .weather-details {
     flex-direction: column
+  }
+  .right-side-details {
+    font-size: 1.8rem;
   }
 }
 
