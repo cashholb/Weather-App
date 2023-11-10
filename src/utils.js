@@ -16,7 +16,7 @@ const constructDateToday = (date) => {
 
     const dayOfWeek = format(new Date(year, month, day), 'EEEE');
     const monthReadable = format(new Date(year, month, day), 'LLLL');
-    return `${dayOfWeek}, ${monthReadable} ${day} at ${hour}:${minute}`;
+    return `${dayOfWeek}, ${monthReadable} ${day} as of ${hour}:${minute}`;
   }
   return 'Could not format date provided';
 };
