@@ -1,15 +1,17 @@
 import getDay from 'date-fns/getDay';
 import format from 'date-fns/format';
 import './styles.css';
-import { constructDateToday, constructDayForcasted } from './utils';
+import { constructDateToday, constructDayForcasted, loadLastLocation, setLastLocation } from './utils';
 import getWeather from "./api";
 import { displayToday, displayForecast, displayCouldNotFind } from "./dom";
 
+// constants
 const NUMBER_OF_DAYS_TO_FORECAST = 3;
-const forecastDays = ["a", "b", "c"];
+const forecastDays = ["", "", ""];
 
+// globals
 let displayedDay = 0;
-let location = 'New York, New York';
+let location = loadLastLocation() || 'New York, New York';
 
 const main = async () => {
   try {
@@ -50,6 +52,7 @@ const main = async () => {
     } else if (displayedDay === 1 || displayedDay === 2) {
       displayForecast(forecastDays[displayedDay], displayedDay === NUMBER_OF_DAYS_TO_FORECAST - 1);
     }
+    setLastLocation(location);
   } catch (e) {
     displayCouldNotFind(location);
   }

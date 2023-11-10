@@ -1,6 +1,4 @@
-:root {
-  --font-size: 20px;
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@300;400;500;600;700;800;900;1000&display=swap');
 
 * {
@@ -22,7 +20,7 @@
   position: absolute;
   font-size: 0.25em;
   top: 0.6em;
-  right: -0.5em;
+  left: 4.5em;
 }
 
 
@@ -48,10 +46,18 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 15px;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.header form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .header form input {
@@ -59,7 +65,12 @@ html, body {
   cursor: text;
   border-bottom: solid rgba(255, 255, 255, 0.582);
   padding: 0px 5px;
-  width: 25vw;
+  font-family: 'Nunito', sans-serif;
+}
+
+.arrow img{
+  height: 4rem;
+  width: 4rem;
 }
 
 .header form button {
@@ -68,8 +79,8 @@ html, body {
 }
 
 .header button img{
-  width: 40px;
-  height: 40px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .content {
@@ -105,6 +116,7 @@ html, body {
 .weather-details {
   margin-top: 15px;
   display: flex;
+  flex-direction: row;
   gap: 30px;
 }
 
@@ -138,9 +150,8 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  margin-block-start: 1em;
-  text-align: left;
+  gap: 15px;  
+  font-family: 'Nunito', sans-serif;
 }
 
 .sad-face {
@@ -175,3 +186,51 @@ html, body {
   width: 35px;
 }
 
+@media (min-width: 1200px) {
+  html {
+    font-size: 28px;
+  }
+  .weather-details {
+    gap: 100px;
+  }
+  
+
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 12px;
+    align-items: center;
+  }
+  .header button img{
+    width: 3rem;
+    height: 3rem;
+  }
+  .header form input {
+    width: 225px;
+  }
+  .weather-details {
+    flex-direction: column
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 9px;
+  }
+  .container {
+    align-items: center;
+  }
+  .right-side-details div {
+    font-size: 2rem;
+  }
+  .header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    row-gap: 15px;
+  }
+  .header form input {
+    width: 150px;
+  }
+}

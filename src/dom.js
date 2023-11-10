@@ -131,7 +131,7 @@ const displayForecast = (forecastObj, isLastDay) => {
 
   // avg wind speed
   const maxWind = document.createElement('div');
-  maxWind.textContent = `Max wind speed ${forecastObj.maxWind}`;
+  maxWind.textContent = `Max wind speed: ${forecastObj.maxWind}`;
   rightSideDom.appendChild(maxWind);
 };
 
