@@ -16,5 +16,4 @@ Live Demo: [cashholb.github.io/Weather-App/](https://cashholb.github.io/Weather-
 - Asynchronous JS using async and await
 - Asynchronous JS error handling with try/catch
 
-
 Background photo by Philippe Donn: https://www.pexels.com/photo/milky-way-illustration-1169754/
